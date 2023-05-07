@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - parte II</title>
+    <script>
+        var arrayserie = [];
+        var i = 0;
+        var arrayfilme = [];
+        var j = 0;
+        function inserir() {
+            var serie = document.getElementById("caixadetexto1").value;
+            var filme = document.getElementById("caixadetexto2").value;
+            if (serie != "" && serie != null) {
+                arrayserie[i] = serie;
+                i++;
+                document.getElementById('caixadetexto1').value = '';
+                document.getElementById('caixadetexto1').focus();
+            } else {
+                arrayfilme[j] = filme;
+                j++;
+                document.getElementById('caixadetexto2').value = '';
+                document.getElementById('caixadetexto2').focus();
+            }
+            qtdserie.innerHTML = `${i}`;
+            qtdfilme.innerHTML = `${j}`;
+        }
+        function serie() {
+            conteudo1.innerHTML = '';
+            var s = 0;
+            while (s <= (i - 1)) {
+                conteudo1.innerHTML = conteudo1.innerHTML + String(arrayserie[s]) + "<br>";
+                s++;
+            }
+        }
+        function filme() {
+            conteudo2.innerHTML = '';
+            var f = 0;
+            while (f <= (j - 1)) {
+                conteudo2.innerHTML = conteudo2.innerHTML + String(arrayfilme[f]) + "<br>";
+                f++;
+            }
+        }
+        function comparar() {
+            if (i == 0 && i == 0) {
+                window.alert("ERRO: Não há nenhuma informação registrada.")
+            } else {
+                if (i == 0) {
+                    window.alert("ERRO: Não há nenhuma série registrada.")
+                } else if (j == 0) {
+                    window.alert("ERRO: Não há nenhum filme registrado.")
+                } else {
+                    if (i == j) {
+                        divqtd.innerHTML = `${"A quantidade de séries e filmes registrados são iguais."}`;
+                    } else if (i > j) {
+                        divqtd.innerHTML = `${"A quantidade de séries registradas é maior que a quantidade de filmes."}`;
+                    } else {
+                        divqtd.innerHTML = `${"A quantidade de filmes registrados é maior que a quantidade de séries."}`;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Séries ou Filmes Coreanos</h1>
+    <hr>
+    <form action="/pagina-processa-dados-do-form" method="post">
+        <label>Digite o nome da série:</label>
+        <input type="text" id="caixadetexto1">
+        <button id="botao1" type="submit" onclick="inserir()">Guardar.</button>
+        <br>
+        <label>Digite o nome do filme:</label>
+        <input type="text" id="caixadetexto2">
+        <button id="botao2" type="submit" onclick="inserir()">Guardar.</button>
+        <hr>
+        <p>Séries Coreanas</p>
+        <button id="botao3" type="submit" onclick="serie()">Clique aqui para mostrar.</button>
+        <div id="conteudo1"></div>
+        <p>Filmes Coreanos</p>
+        <button id="botao4" type="submit" onclick="filme()">Clique aqui para mostrar.</button>
+        <div id="conteudo2"></div>
+        <hr>
+
+        <p>Quantidade de séries registradas: </p>
+        <div id="qtdserie">-</div>
+        <p>Quantidade de filmes registrados: </p>
+        <div id="qtdfilme">-</div>
+        <hr>
+        <p><button id="botao" type="submit" onclick="comparar()">Clique aqui para comparar as quantidades.</button></p>
+        <p>Resultado: <div id="divqtd">-</p>
+    </form>
+</body>
+
+</html>

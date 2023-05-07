@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Autoria Web - Eduarda Brandão</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <header id="titulo">
+        <h1>Cadastro - Pet Shop</h1>
+    </header>
+    <form action="/pagina-processa-dados-do-form" method="post">
+        <hr />
+        <h2>Registre o seu pet:</h2>
+        <label for="tipo">Qual seu animal de estimação?
+            <select id="tipo">
+                <option id="cachorro">Cachorro</option>
+                <option id="gato">Gato</option>
+            </select>
+        </label>
+        <p><label for="nomepet">Diga o nome do seu bichinho: </label></p>
+        <input type="text" id="nomepet" />
+        <p><label for="idadepet">Quantos anos tem seu animal? </label></p>
+        <input type="number" id="idadepet" />
+        <p><button id="botao" type="submit" onclick="registrar()">Registrar dados do seu pet!</button></p>
+
+        <hr />
+        <h3>Lista dos cachorros cadastrados: </h3>
+        <div id="listacachorros"></div>
+        <hr/>
+        <h3>Lista de gatos cadastrados: </h3>
+        <div id="listagatos"></div>
+        <hr />
+        <h3>Quantidade de gatos registrados: </h3>
+        <div id="divqtdgatos">-</div>
+        <h3>Quantidade de cachorros registrados: </h3>
+        <div id="divqtdcachorros">-</div>
+        <p><button id="botao" type="submit" onclick="comparar()">Clique para comparar a quantidade de animais registrados! </button></p>
+        <h4>Resultado: <div id="divqtd">-</div></h4>
+        
+
+        
+    </form>
+</body>
+<footer>
+    <hr />
+    <p>Eduarda Brandão</p>
+    <p>Parnamirim/2023</p>
+</footer>
+
+</html>

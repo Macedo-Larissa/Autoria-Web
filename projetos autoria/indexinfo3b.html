@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="codigo.js"></script>
+    <title>TRABALHINHO SHOW - INFO 3B</title>
+    <style>
+        #instrucoes{
+            display: flex;
+            background-color: mediumseagreen;
+        }
+        .sectiondiv{
+            background-color: aqua;
+        }
+        form {
+            width: 80%;
+            margin: 0 auto;
+        }
+    
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+    
+        button[type="submit"] {
+            padding: 10px;
+            width: 100%;
+        }
+    
+        #resultado, #produtossim, #produtosnao {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    
+        @media (max-width: 600px) {
+            form {
+                width: 90%;
+            }
+        }
+    </style>    
+</head>
+
+<body>
+    <form action="/pagina-processa-dados-do-form" method="post">
+        <h2> VAI DAR CERTO, FERA - LARISSA MACEDO</h2>
+        <hr>
+        <p>Criar um algoritmo em Javacript que, ao clicar no botão "Analisar Informações do Produto", o software analise
+            e calcule os valores, de acordo com os seguintes requisitos:</p>
+        <section id="instrucoes">
+            <ul>
+                <li>O preço indicado não pode ser negativo - <strong>0.5 ponto</strong></li>
+                <li>O preço indicado não pode ser zero - <strong>0.5 ponto</strong></li>
+                <li>O campo do preço não pode estar vazio - <strong>0.5 ponto</strong></li>
+                <li>O campo do produto não pode estar vazio - <strong>0.5 ponto</strong></li>
+            </ul>
+            <ol>
+                <li>Somar os preços dos produtos analisados que atendam aos requisitos - <strong>0.5 ponto</strong></li>
+                <li>Somar a quantidade de produtos analisados que atendam aos requisitos - <strong>0.5 ponto</strong>
+                </li>
+                <li>Somar a quantidade de produtos analisados que não atendam aos requisitos - <strong>0.5
+                        ponto</strong></li>
+            </ol>
+        </section>
+        <p>OBS: A pontuação só voga se os resultados estiverem aparecendo corretamente nos locais determinados abaixo
+        </p>
+        <hr>
+        <label for="produto">Nome do Produto:</label>
+        <input type="text" id="produto" />
+        <label for="preco">Preço do Produto:</label>
+        <input type="number" id="preco" />
+        <p><button id="botao" type="submit" onclick="cadastrarproduto()">Analisar Informações do Produto</button></p>
+        <hr>
+        <h3>Nome dos produtos que atenderam os requisitos</h3>
+        <button id="botao3" type="submit" onclick="nomeprodutossim()">Clique aqui para mostrar.</button>
+        <br>
+        <div id="conteudo1"></div>
+        <h3>Nome dos produtos que não atenderam aos requisitos</h3>
+        <button id="botao4" type="submit" onclick="nomeprodutosnao()">Clique aqui para mostrar.</button>
+        <br>
+        <div id="conteudo2"></div>
+        <br>
+        <hr>
+        <section class="sectiondiv">
+            <ul>
+                <li>Mostrar no HTML o resultado do somatório dos preços dos produtos analisados que atendam aos
+                    requisitos - <strong>0.5 ponto</strong></li>
+            </ul>
+            <h3>1 - Somatório dos Preços dos Produtos Analisados Que Atenderam aos Requisitos</h3>
+            <div id="resultado">0</div>
+        </section>
+        <hr>
+        <section class="sectiondiv">
+            <ul>
+                <li>Mostrar no HTML a quantidade de produtos analisados que atenderam aos requisitos - <strong>0.5
+                        ponto</strong></li>
+            </ul>
+            <h3>2 - Quantidade de Produtos Analisados que Atenderam aos Requisitos </h3>
+            <div id="produtossim">0</div>
+        </section>
+        <hr>
+        <section class="sectiondiv">
+            <ul>
+                <li>Mostrar no HTML a quantidade de produtos analisados que não atenderam a algum requisito -
+                    <strong>0.5 ponto</strong>
+                </li>
+            </ul>
+            <h3>3 - Quantidade de Produtos Analisados que Não Atenderam ao Algum Requisito</h3>
+            <div id="produtosnao">0</div>
+        </section>
+    </form>
+</body>
+
+</html>
